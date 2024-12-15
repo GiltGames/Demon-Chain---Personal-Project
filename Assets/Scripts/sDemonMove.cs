@@ -30,6 +30,15 @@ public class sDemonMove : MonoBehaviour
     public float vDemonHomeVariance = 0.1f;
     public float vMouseSensitityDemon=1;
     public float tSlowdown = 1f;
+    public float vDamageForce;
+    public float vDamageFire;
+    public float vDamageLightning;
+    public float vDamageFrostTmp;
+    public float vDamageForceTmp;
+    public float vDamageFireTmp;
+    public float vDamageLightningTmp;
+    public float vDamageFrost;
+    public int vDemonType;
 
 
 
@@ -135,6 +144,21 @@ public class sDemonMove : MonoBehaviour
 
             vDemonMoveState = 1;
             rb.AddForce(transform.forward * vFireSpeed);
+           
+
+
+            switch (vDemonType)
+            {
+                case 0:
+                    vDamageForceTmp = vDamageForce*vFireSpeed/vFireSpeedMax;
+
+
+                    break;
+
+
+
+            }
+
             vFireSpeed = 0;
         }
 
