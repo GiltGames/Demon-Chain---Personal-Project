@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GreySeeThru
+  m_Name: GoldSeeThru
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: 1d331a90105a5734691f7210b08c8a17, type: 2}
   m_ModifiedSerializedProperties: 16
@@ -38,8 +38,8 @@ Material:
     - _Surface: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.40566033, g: 0.28511032, b: 0.28511032, a: 0.5019608}
-    - _Color: {r: 0.4056603, g: 0.2851103, b: 0.2851103, a: 0.5019608}
+    - _BaseColor: {r: 0.9811321, g: 0.75822836, b: 0, a: 0.44705883}
+    - _Color: {r: 0.9811321, g: 0.75822836, b: 0, a: 0.44705883}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &984831270528290135
