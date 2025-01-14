@@ -16,6 +16,9 @@ public class sDemonMove : MonoBehaviour
     public Light dL1;
     public Light dL2;
     public Light dL3;
+    [SerializeField] ParticleSystem gDemonParticles;
+    [SerializeField] float vDemonParticleSpeed;
+
     public float vDemonLightLevel;
     public float vDemonLightLevelMax;
     public float vLightset;
@@ -40,6 +43,8 @@ public class sDemonMove : MonoBehaviour
     public float vDamageFrost;
     public int vDemonType;
 
+ 
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -49,6 +54,8 @@ public class sDemonMove : MonoBehaviour
         dL1 = DemonLight1.GetComponent<Light>();
         dL2 = DemonLight2.GetComponent<Light>();
         dL3 = DemonLight3.GetComponent<Light>();
+        
+
     }
 
     // Update is called once per frame
@@ -122,6 +129,8 @@ public class sDemonMove : MonoBehaviour
 
         if (vMouseFire > 0)
         {
+            gDemonParticles.gameObject.SetActive(true);
+
             vFireSpeed = vFireSpeed + vFireSpeedInc * Time.deltaTime;
 
             if (vFireSpeed > vFireSpeedMax)
@@ -132,7 +141,12 @@ public class sDemonMove : MonoBehaviour
 
             vDemonLightLevel = vDemonLightLevelMax * (vFireSpeed / vFireSpeedMax);
 
+
+
             vLightset = vDemonLightLevel;
+            var pMainTmp = gDemonParticles.GetComponent<ParticleSystem>().main;
+            pMainTmp.startSpeed = vDemonLightLevel * vDemonParticleSpeed;
+
             pSetLight();
 
         }
@@ -192,6 +206,10 @@ public class sDemonMove : MonoBehaviour
     {
 
         vHomeDir = (Hand.transform.position - transform.position);
+
+        var pMainTmp = gDemonParticles.GetComponent<ParticleSystem>().main;
+        pMainTmp.startSpeed = 0;
+        gDemonParticles.gameObject.SetActive(false);
 
         transform.LookAt(Hand.transform);
 

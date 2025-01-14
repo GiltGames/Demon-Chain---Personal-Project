@@ -34,7 +34,7 @@ public class sPlayerMove : MonoBehaviour
        float vMoveForward = Input.GetAxis("Vertical");
         float vMoveSideways = Input.GetAxis("Horizontal");
 
-        vPlayerMove = ((Vector3.forward * vMoveForward )* vPlayerMoveSpeed).normalized *Time.deltaTime;
+        vPlayerMove = ((Vector3.forward * vMoveForward ).normalized * vPlayerMoveSpeed) *Time.deltaTime;
 
         transform.Translate(vPlayerMove);
         transform.Rotate(new Vector3(0,Time.deltaTime* vMoveSideways * vPlayerTurnSpeed,0));
