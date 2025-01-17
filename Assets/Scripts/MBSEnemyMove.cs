@@ -55,12 +55,17 @@ public class MBSEnemyMove : MonoBehaviour
 
             case 2:
 
+                FnAttack();
 
 
 
 
 
 
+                break;
+
+
+                case 3:
 
                 break;
         }
@@ -149,6 +154,11 @@ public class MBSEnemyMove : MonoBehaviour
 
     }
 
+    void FnAttack()
 
+    {
+
+
+    }
 
 }
