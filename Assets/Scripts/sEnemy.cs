@@ -17,6 +17,9 @@ public class sEnemy : MonoBehaviour
     public float vLightningResist;
     public float vFrostResist;
 
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
